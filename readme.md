@@ -21,3 +21,8 @@ JavaFX运行环境，需要手动安装
 
 1. 下载generated下fx-http-client.jar直接运行
 2. 使用源码在IDE中运行，或用IDE编译到处可执行jar
+
+## 效果
+
+1. 主界面
+![主界面](screenshoot/main.png)
