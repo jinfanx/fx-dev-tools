@@ -25,7 +25,7 @@
 - 引入嵌入式数据库保存历史记录
 
 ## 笔记
-[JavaFX笔记](note/javafx.md)
+[笔记, 包含javaFX常见问题以及开发过程中遇到的其他问题](note/note.md)
 
 ## 效果
 
