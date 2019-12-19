@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<TabPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="top.freej.devtools.controller.SnifferController">
+    <tabs>
+        <Tab closable="false" text="主机扫描"/>
+        <Tab closable="false" text="端口扫描">
+            <VBox fx:id="vBoxPortScan">
+                <children>
+                    <AnchorPane fx:id="anchorPortScanCondition" prefHeight="67.0" prefWidth="940.0">
+                        <children>
+                            <Label layoutX="25.0" layoutY="25.0" text="port scan"/>
+                            <ComboBox editable="true" layoutX="91.0" layoutY="20.0" prefHeight="28.0"
+                                      prefWidth="312.0"/>
+                            <TextField editable="false" layoutX="413.0" layoutY="20.0" prefHeight="28.0"
+                                       prefWidth="141.0" promptText="time use"/>
+                            <TextField editable="false" layoutX="564.0" layoutY="20.0" prefHeight="28.0"
+                                       prefWidth="139.0" promptText="result number"/>
+                            <Button layoutX="724.0" layoutY="20.0" mnemonicParsing="false" text="scan"/>
+                        </children>
+                    </AnchorPane>
+                    <ListView fx:id="resultPortScan"
+                              prefHeight="${vBoxPortScan.height - anchorPortScanCondition.height}"
+                              prefWidth="${vBoxPortScan.width}">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="80"/>
+                                <String fx:value="80"/>
+                                <String fx:value="80"/>
+                                <String fx:value="80"/>
+                            </FXCollections>
+                        </items>
+                    </ListView>
+                </children>
+            </VBox>
+        </Tab>
+    </tabs>
+</TabPane>

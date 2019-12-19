@@ -1,4 +1,4 @@
-package top.freej.fxhttpclient;
+package top.freej.devtools;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,9 +11,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        primaryStage.setTitle("FxHttpClient");
+        primaryStage.setTitle("DevTools");
 
-        Scene rootScene = new Scene(root, 800, 500);
+        Scene rootScene = new Scene(root, 1000, 600);
 
         primaryStage.setScene(rootScene);
         primaryStage.show();

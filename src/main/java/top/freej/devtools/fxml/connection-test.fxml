@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="top.freej.devtools.controller.ConnectionTestController"
+      prefHeight="400.0">
+    <children>
+        <AnchorPane prefHeight="60">
+            <Label layoutX="20" layoutY="20" text="端口测试"/>
+            <ComboBox fx:id="telnetHost" editable="true" layoutX="85.0" layoutY="16.0" promptText="192.168.1.1"/>
+            <ComboBox fx:id="telnetPort" editable="true" layoutX="298.0" layoutY="16.0" promptText="3306"/>
+            <TextField fx:id="telnetResult" layoutX="511.0" layoutY="16.0" promptText="端口连通性"/>
+            <Button fx:id="btnTelnet" layoutX="697.0" layoutY="16.0" text="检测"/>
+        </AnchorPane>
+        <AnchorPane prefHeight="60">
+            <Label layoutX="20" layoutY="20" text="主机测试"/>
+            <ComboBox fx:id="pingHost" editable="true" layoutX="85.0" layoutY="16.0" promptText="192.168.1.1"/>
+            <TextField fx:id="pingResult" layoutX="298.0" layoutY="16.0" prefHeight="28.0" prefWidth="138.0"
+                       promptText="主机连通性"/>
+            <Button fx:id="btnPing" layoutX="445.0" layoutY="15.0" text="检测"/>
+        </AnchorPane>
+    </children>
+</VBox>

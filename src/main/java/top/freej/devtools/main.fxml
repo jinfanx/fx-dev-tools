@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+
+<TabPane prefHeight="622.0" prefWidth="940.0" stylesheets="@main.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <tabs>
+        <Tab text="HttpClient" closable="false">
+            <fx:include source="fxml/http-client.fxml" />
+        </Tab>
+        <Tab text="连通性检测" closable="false">
+            <fx:include source="fxml/connection-test.fxml" />
+        </Tab>
+        <Tab text="嗅探工具" closable="false">
+            <fx:include source="fxml/sniffer.fxml" />
+        </Tab>
+    </tabs>
+</TabPane>
