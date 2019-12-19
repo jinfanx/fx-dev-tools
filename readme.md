@@ -1,26 +1,31 @@
-# fx-http-client
-用javaFX实现的简单http客户端，类似postman，但是只有最基本的功能，如下：
+# dev-tools
+用javaFX实现的简单常用小工具，如http客户端,连通性测试工具,端口和主机扫描工具等.
 
-- 发送get/post请求
-- 发送json格式的get/post请求
-- 展示请求头、请求体、响应头、响应体等
-- 格式化json
-- 可忽略证书校验，方便验证使用自签名证书的站点
-- 使用H2保留历史记录
+## 开发环境
+- jdk13 (模块化构建以及http client)
+- openjfx13(javaFX)
+- gradle6.0
 
-## 适用对象
-
-仅需简单的测试接口测试功能，postman无法使用或无法安装的情况下可作为替代
+## 目的
+- 学习javaFX
+- 体验Java9引入的模块化系统
+- 体验jdk原生http client
+- 体验jlink与定制jre
 
 ## 前置条件
+- 至少使用jdk11, api中使用了Java11中的http client,现已稳定,不兼容jdk9和jdk10,http client模块及包不同
+- 需要单独安装javafx运行环境(后续会打包定制的运行环境,包括jre和javaFX运行环境)
+- gradle6.0  
+`注意: 下载运行此项目必须满足上面的条件,开发环境jdk必须要配置为java11+`
 
-- 需要有javaFX运行环境，windows版jdk1.8自带JavaFX，可直接运行。但openJDK以及jdk9+默认不包含
-JavaFX运行环境，需要手动安装
+## TODO
+- 目前只有界面,逻辑未实现
+- jlink定制jre
+- 运行环境打包
+- 引入嵌入式数据库保存历史记录
 
-## 使用方法
-
-1. 下载generated下fx-http-client.jar直接运行
-2. 使用源码在IDE中运行，或用IDE编译到处可执行jar
+## 笔记
+[JavaFX笔记](note/javafx.md)
 
 ## 效果
 
