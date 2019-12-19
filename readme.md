@@ -1,4 +1,4 @@
-# dev-tools
+# fx-dev-tools
 用javaFX实现的简单常用小工具，如http客户端,连通性测试工具,端口和主机扫描工具等.
 
 ## 开发环境
