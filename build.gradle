@@ -9,9 +9,10 @@ repositories {
 sourceCompatibility = JavaVersion.VERSION_13
 
 dependencies {
-    implementation("com.google.guava:guava:28.0-jre")
-    implementation("com.alibaba:fastjson:1.2.62")
-    testImplementation("junit:junit:4.12")
+    implementation "com.google.guava:guava:28.0-jre"
+    implementation "com.alibaba:fastjson:1.2.62"
+    implementation "org.apache.commons:commons-lang3:3.9"
+    testImplementation "junit:junit:4.12"
 }
 
 application {

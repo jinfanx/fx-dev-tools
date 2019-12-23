@@ -15,14 +15,14 @@
                 <children>
                     <AnchorPane fx:id="anchorPortScanCondition" prefHeight="67.0" prefWidth="940.0">
                         <children>
-                            <Label layoutX="25.0" layoutY="25.0" text="port scan"/>
+                            <Label layoutX="25.0" layoutY="25.0" text="主机"/>
                             <ComboBox editable="true" layoutX="91.0" layoutY="20.0" prefHeight="28.0"
                                       prefWidth="312.0"/>
                             <TextField editable="false" layoutX="413.0" layoutY="20.0" prefHeight="28.0"
-                                       prefWidth="141.0" promptText="time use"/>
+                                       prefWidth="141.0" promptText="耗时"/>
                             <TextField editable="false" layoutX="564.0" layoutY="20.0" prefHeight="28.0"
-                                       prefWidth="139.0" promptText="result number"/>
-                            <Button layoutX="724.0" layoutY="20.0" mnemonicParsing="false" text="scan"/>
+                                       prefWidth="139.0" promptText="开放端口数量"/>
+                            <Button layoutX="724.0" layoutY="20.0" mnemonicParsing="false" text="扫描"/>
                         </children>
                     </AnchorPane>
                     <ListView fx:id="resultPortScan"
@@ -30,9 +30,6 @@
                               prefWidth="${vBoxPortScan.width}">
                         <items>
                             <FXCollections fx:factory="observableArrayList">
-                                <String fx:value="80"/>
-                                <String fx:value="80"/>
-                                <String fx:value="80"/>
                                 <String fx:value="80"/>
                             </FXCollections>
                         </items>

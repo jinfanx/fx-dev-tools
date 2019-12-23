@@ -2,12 +2,10 @@ package top.freej.devtools.service;
 
 import com.alibaba.fastjson.JSON;
 
-import javax.net.ssl.TrustManager;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.security.SecureRandom;
 import java.util.Map;
 
 /**
@@ -58,7 +56,8 @@ public class HttpService {
 
         // 忽略证书
         if (ignoreCertificate && (url.startsWith("https") || url.startsWith("HTTPS"))) {
-            client.sslContext().init(null, new TrustManager[]{TrustAllX509TrustManager.getInstance()}, new SecureRandom());
+            // todo 此方法有误,
+//            client.sslContext().init(null, new TrustManager[]{TrustAllX509TrustManager.getInstance()}, new SecureRandom());
         }
 
         return client.send(builder.build(), HttpResponse.BodyHandlers.ofString());

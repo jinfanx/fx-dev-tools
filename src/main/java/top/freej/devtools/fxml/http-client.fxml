@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
-<BorderPane prefHeight="488.0" prefWidth="719.0" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="top.freej.devtools.controller.HttpClientController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<BorderPane prefHeight="488.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="top.freej.devtools.controller.HttpClientController">
     <top>
         <AnchorPane prefHeight="63.0" prefWidth="940.0" BorderPane.alignment="CENTER">
             <children>
                 <ComboBox fx:id="method" layoutX="14.0" layoutY="20.0" prefHeight="23.0" prefWidth="122.0">
                     <items>
                         <FXCollections fx:factory="observableArrayList">
-                            <String fx:value="POST"/>
-                            <String fx:value="GET"/>
+                            <String fx:value="POST" />
+                            <String fx:value="GET" />
                         </FXCollections>
                     </items>
                     <value>
-                        <String fx:value="POST"/>
+                        <String fx:value="POST" />
                     </value>
                 </ComboBox>
-                <CheckBox fx:id="ignoreCertificate" layoutX="485.0" layoutY="28.0" mnemonicParsing="false"
-                          selected="true" text="忽略证书"/>
-                <CheckBox fx:id="jsonRequest" layoutX="580.0" layoutY="28.0" mnemonicParsing="false" selected="true"
-                          text="JSON请求"/>
-                <ComboBox fx:id="url" editable="true" layoutX="152.0" layoutY="20.0" prefHeight="23.0" prefWidth="207.0"
-                          promptText="http://host:port/url"/>
-                <Button fx:id="btnSend" layoutX="394.0" layoutY="20.0" mnemonicParsing="false" onAction="#sendRequest"
-                        text="发送请求"/>
+                <CheckBox fx:id="ignoreCertificate" layoutX="377.0" layoutY="23.0" mnemonicParsing="false" selected="true" text="忽略证书" />
+                <CheckBox fx:id="jsonRequest" layoutX="471.0" layoutY="23.0" mnemonicParsing="false" selected="true" text="JSON请求" />
+                <ComboBox fx:id="url" editable="true" layoutX="152.0" layoutY="20.0" prefHeight="23.0" prefWidth="207.0" promptText="http://host:port/url" />
+                <Button fx:id="btnSend" layoutX="571.0" layoutY="18.0" mnemonicParsing="false" onAction="#sendRequest" text="发送请求" />
             </children>
         </AnchorPane>
     </top>
@@ -38,13 +44,14 @@
                 <Tab text="请求">
                     <VBox fx:id="vBoxRequest">
                         <children>
+                            <TableView fx:id="requestHeader" prefHeight="${vBoxRequest.height * 0.2 - 3}" prefWidth="${vBoxRequest.width}">
+                                <columns>
+                                    <TableColumn prefWidth="${vBoxRequest.width * 0.3}" text="key" editable="true"/>
+                                    <TableColumn prefWidth="${vBoxRequest.width * 0.7}" text="value" editable="true"/>
+                                </columns>
+                            </TableView>
                             <ScrollPane>
-                                <TextArea fx:id="requestHeader" prefHeight="${vBoxRequest.height * 0.3 - 5}"
-                                          prefWidth="${vBoxRequest.width - 7}" promptText="请求头"/>
-                            </ScrollPane>
-                            <ScrollPane>
-                                <TextArea fx:id="requestBody" prefHeight="${vBoxRequest.height * 0.7 - 5}"
-                                          prefWidth="${vBoxRequest.width - 7}" promptText="请求体"/>
+                                <TextArea fx:id="requestParam" prefHeight="${vBoxRequest.height * 0.8 - 3}" prefWidth="${vBoxRequest.width - 3}" promptText="请求体" />
                             </ScrollPane>
                         </children>
                     </VBox>
@@ -52,13 +59,14 @@
                 <Tab text="响应">
                     <VBox fx:id="vBoxResponse">
                         <children>
+                            <TableView fx:id="responseHeader" prefHeight="${vBoxRequest.height * 0.2 - 3}" prefWidth="${vBoxRequest.width}">
+                                <columns>
+                                    <TableColumn prefWidth="${vBoxRequest.width * 0.3}" text="key" editable="true"/>
+                                    <TableColumn prefWidth="${vBoxRequest.width * 0.7}" text="value" editable="true"/>
+                                </columns>
+                            </TableView>
                             <ScrollPane>
-                                <TextArea fx:id="responseHeader" prefHeight="${vBoxResponse.height * 0.3 - 5}"
-                                          prefWidth="${vBoxResponse.width - 7}" promptText="响应头"/>
-                            </ScrollPane>
-                            <ScrollPane>
-                                <TextArea fx:id="responseBody" prefHeight="${vBoxResponse.height * 0.7 - 5}"
-                                          prefWidth="${vBoxResponse.width - 7}" promptText="响应体"/>
+                                <TextArea fx:id="responseBody" prefHeight="${vBoxRequest.height * 0.8 - 3}" prefWidth="${vBoxRequest.width - 3}" promptText="响应体" />
                             </ScrollPane>
                         </children>
                     </VBox>
